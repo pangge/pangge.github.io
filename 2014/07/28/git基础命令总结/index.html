@@ -30,7 +30,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">golden</a></h1>
-  <h2><a href="/">码农</a></h2>
+  <h2><a href="/">get a real life</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -40,8 +40,6 @@
       <li><a href="/archives">Archives</a></li>
     
       <li><a href="/About">About</a></li>
-    
-      <li><a href="http://www.nwpu.edu.cn">NWPU</a></li>
     
       <li><a href="https://github.com/pangge">Github</a></li>
     
@@ -66,48 +64,66 @@
     </header>
     <div class="entry">
       
-        <h2 id="（####针对ssh方式）"><em>（####针对ssh方式）</em></h2>
+        <h4 id="（针对ssh方式）"><em>（针对ssh方式）</em></h4>
+<hr>
 <h1 id="1_github_代码提交">1  github 代码提交</h1>
-<h3 id="创建新的版本库">创建新的版本库</h3>
+<p><strong>创建新的版本库</strong></p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">touch README.md</div><div class="line">$git init</div><div class="line">$git add README.md</div><div class="line">$git commit -m <span class="string">"first commit"</span></div><div class="line">$git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
 
-<h4 id="推送现有的版本库">推送现有的版本库</h4>
+<p><strong>推送现有的版本库</strong></p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
 
-<h4 id="添加修改的版本库">添加修改的版本库</h4>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$git add . <span class="comment">// 表示添加所有文件 </span></div><div class="line">$git commit -m <span class="string">"修改日志"</span></div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
+<p><strong>添加修改的版本库</strong></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$git add . <span class="comment">// .表示添加所有文件 </span></div><div class="line">$git commit -m <span class="string">"修改日志"</span></div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
 
-<h2 id="###错误解决"><em>###错误解决</em></h2>
-<h4 id="运行：">运行：</h4>
+<h2 id="错误解决"><strong><em>错误解决</em></strong></h2>
+<h4 id="1-运行：">1.运行：</h4>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div></pre></td></tr></table></figure>
 
 <p>错误提示：</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal: remote origin already exists.</div></pre></td></tr></table></figure>
 
+<p>解决办法：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$git remote rm origin</div></pre></td></tr></table></figure>
 
+<h4 id="2-运行：">2.运行：</h4>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git $ git push origin master</div></pre></td></tr></table></figure>
 
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解决办法：</div></pre></td></tr></table></figure>
+<p>错误提示：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:failed to push som refs to</div></pre></td></tr></table></figure>
 
-<p>scala<br>$git remote rm origin </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">####运行：</span></div></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master <span class="comment">// 先把远程服务器中版本拉取下来，再push</span></div></pre></td></tr></table></figure>
 
-<p>scala<br> git $ git push origin master </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">错误提示：</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="2_github_代码clone">2  github 代码clone</h1>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git<span class="annotation">@github</span>.com:youname/youproject.git  <span class="string">"path"</span> <span class="comment">// path 要存放本地版本库的地址</span></div></pre></td></tr></table></figure>
 
-<p>scala<br>error:failed to push som refs to </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="escape">``</span><span class="escape">`s</span>cala</div><div class="line">解决办法：</div></pre></td></tr></table></figure>
-
-<p>scala<br>$ git pull origin master // 先把远程服务器中版本拉取下来，再push</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby">--</span></div><div class="line"></div><div class="line">#2  github 代码clone</div></pre></td></tr></table></figure>
-
-<p>scala<br>$ git clone git@github.com:youname/youproject.git  “path” // path 要存放本地版本库的地址<br>```</p>
+<p><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png" alt="GitHub" title="GitHub cat"></p>
 
       
     </div>
     <footer>
       
+      <nav id="pagination" >
+    
+    
+    <a href="/2014/07/26/休息，休息一会儿/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+    </nav>
         
+  
+  <div class="categories">
+    <a href="/categories/代码托管/">代码托管</a>
+  </div>
+
         
+  
+  <div class="tags">
+    <a href="/tags/github/">github</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -126,25 +142,7 @@
   </div>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
 
-        
-<section id="comment">
-  <div class="ds-thread"  data-title="item.title" data-url="item.permalink" data-order="desc" data-limit=10></div>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"pangge"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-</section>
-
-
+        <div class="ds-thread" data-thread-key="2014/07/28/git基础命令总结/"></div>  
 
       
       <div class="clearfix"></div>
@@ -166,6 +164,8 @@ var duoshuoQuery = {short_name:"pangge"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
+    <li><a href="/categories/代码托管/">代码托管</a><small>1</small></li>
+  
     <li><a href="/categories/转载/">转载</a><small>1</small></li>
   
   </ul>
@@ -177,11 +177,39 @@ var duoshuoQuery = {short_name:"pangge"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
+    <li><a href="/tags/github/">github</a><small>1</small></li>
+  
     <li><a href="/tags/hacker/">hacker</a><small>1</small></li>
   
   </ul>
 </div>
 
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/07/28/git基础命令总结/">git基础命令总结</a>
+      </li>
+    
+      <li>
+        <a href="/2014/07/26/休息，休息一会儿/">(ZZ)休息，休息一会儿</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><a href="http://coolshell.cn/" title="chenhao'blog">酷壳-CoolShell</a></li>
+<li><a href="http://coolshell.cn/" title="openlab">西北工业大学<img src="http://www.openlab.net.cn/img/logo.gif"  height="20" width="20"/></a></li>
+</ul>
+</div>
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -206,5 +234,17 @@ var duoshuoQuery = {short_name:"pangge"};
 })(jQuery);
 </script>
 
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pangge"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
 </body>
 </html>
