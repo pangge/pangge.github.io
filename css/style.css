@@ -113,13 +113,14 @@ a:hover {
   text-decoration: none;
 }
 #header h1 {
+  text-shadow: 10px 10px 3px #ddd;
   font-weight: normal;
-  font-size: 2.5em;
+  font-size: 5.5em;
   line-height: 1;
 }
 #header h2 {
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 1.9em;
   line-height: 1;
   margin-top: 10px;
 }
@@ -133,6 +134,21 @@ a:hover {
 #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+}
+#header h3,
+#header h3:link,
+#header h3:visited {
+  text-shadow: 10px 10px 3px #ddd;
+  font-size: 1.8em;
+  color: #aaa;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+}
+#header h3:hover,
+#header h3:active {
+  color: #fff;
+  background-color: #aaa;
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
@@ -608,14 +624,14 @@ article footer .addthis iframe {
 }
 #sidebar .widget {
   background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: 10px 10px 3px #ddd;
+  box-shadow: 10px 10px 3px #ddd;
   margin-bottom: 30px;
   word-wrap: break-word;
 }
 #sidebar .widget .title {
   padding: 15px 20px;
-  font-size: 1em;
+  font-size: 1.5em;
   border-bottom: 1px solid #ddd;
   font-weight: normal;
 }
@@ -695,6 +711,7 @@ article footer .addthis iframe {
   margin-bottom: 50px;
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
+  font-weight: normal;
 }
 .entry .gist {
   background: #eee;
