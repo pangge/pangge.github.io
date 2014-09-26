@@ -103,8 +103,10 @@ a:hover {
 }
 #header {
   text-shadow: 0 0 1px #fff;
-  margin: 50px auto;
-h3
+  margin: 35px auto;
+}
+#header menu {
+  margin: 35px;
 }
 #header a {
   color: #999;
@@ -136,7 +138,11 @@ h3
   float: left;
   margin-middle: 30px;
 }
+#header b {
+  font-size: 1em;
+}
 #header #button li a {
+  margin: 13px;
   font-size: 1.5em;
   text-decoration: none;
   float: left;
@@ -146,7 +152,7 @@ h3
 #header #button li a:hover {
   font-size: 25px;
   margin-top: -6px;
-  padding-bottom: 10px;
+  padding-bottom: 22px;
   color: #fff;
   background-color: #aaa;
 }
