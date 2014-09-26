@@ -4,7 +4,7 @@
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
   <meta charset="utf-8">
   
-  <title>golden</title>
+  <title>git基础命令总结 | golden</title>
   <meta name="author" content="goldencwcui">
   
   <meta name="description" content="goldencwcui c++/c perl FPGA Machine Learning Image processing">
@@ -12,7 +12,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="git基础命令总结"/>
   <meta property="og:site_name" content="golden"/>
 
   
@@ -58,8 +58,7 @@
 </div>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -69,7 +68,7 @@
       
       
   
-    <h1 class="title"><a href="/2014/07/28/git基础命令总结/">git基础命令总结</a></h1>
+    <h1 class="title">git基础命令总结</h1>
   
 
     </header>
@@ -88,69 +87,65 @@
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$git add . <span class="comment">// .表示添加所有文件 </span></div><div class="line">$git commit -m <span class="string">"修改日志"</span></div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
 
 <p><strong><em>错误解决</em></strong></p>
-<h2>
+<h2><a id="more"></a></h2>
+<h4 id="1-运行：">1.运行：</h4>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div></pre></td></tr></table></figure>
+
+<p>错误提示：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal: remote origin already exists.</div></pre></td></tr></table></figure>
+
+<p>解决办法：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$git remote rm origin</div></pre></td></tr></table></figure>
+
+<h4 id="2-运行：">2.运行：</h4>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git $ git push origin master</div></pre></td></tr></table></figure>
+
+<p>错误提示：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:failed to push som refs to</div></pre></td></tr></table></figure>
+
+<p>解决办法：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master <span class="comment">// 先把远程服务器中版本拉取下来，再push</span></div></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="2_github_代码clone">2  github 代码clone</h1>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git<span class="annotation">@github</span>.com:youname/youproject.git  <span class="string">"path"</span> <span class="comment">// path 要存放本地版本库的地址</span></div></pre></td></tr></table></figure>
+
+<p><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png" alt="GitHub" title="GitHub cat"></p>
+
       
     </div>
     <footer>
       
-        <div class="alignleft">  
-    <a href="/2014/07/28/git基础命令总结/#more" class="more-link">Read More</a>  
-</div>  
+      <nav id="pagination" >
+    
+    
+    <a href="/2014/07/26/休息，休息一会儿/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+    </nav>
+        
   
-    <a href="/2014/07/28/git基础命令总结/" class="ds-thread-count comment-link alignright" data-thread-key="2014/07/28/git基础命令总结/" data-count-type="comments"></a>  
- 
+  <div class="categories">
+    <a href="/categories/代码托管/">代码托管</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/github/">github</a>
+  </div>
+
+        
+<div class="bshare-custom icon-medium-plus"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        <div class="ds-thread" data-thread-key="2014/07/28/git基础命令总结/"></div>  
+
       
       <div class="clearfix"></div>
     </footer>
 
   </div>
 </article>
-
-
-  <article class="photo">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-07-26T04:01:39.000Z"><a href="/2014/07/26/休息，休息一会儿/">7月 26 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/07/26/休息，休息一会儿/">(ZZ)休息，休息一会儿</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><img src="http://www.yinwang.org/images/yixiu.jpg" alt="" title="一休哥 1"></p>
-<p>本人进入了比较长的，理所应得的休息和娱乐时间。无聊时也看看闲书和电影。这里推荐几个最近看的东西。</p>
-<h1 id="《The_Design_of_Everyday_Things》">《The Design of Everyday Things》</h1>
-<h2>
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">  
-    <a href="/2014/07/26/休息，休息一会儿/#more" class="more-link">Read More</a>  
-</div>  
-  
-    <a href="/2014/07/26/休息，休息一会儿/" class="ds-thread-count comment-link alignright" data-thread-key="2014/07/26/休息，休息一会儿/" data-count-type="comments"></a>  
- 
-      
-      <div class="clearfix"></div>
-    </footer>
-
-  </div>
-</article>
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="widget tag">
 <h3 class="title">公告</h3>
