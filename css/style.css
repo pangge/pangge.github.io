@@ -124,7 +124,7 @@ a:hover {
   font-weight: normal;
   font-size: 1.9em;
   line-height: 1;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 #header #main-nav {
   margin-top: 10px;
@@ -143,18 +143,20 @@ a:hover {
 }
 #header #button li a {
   margin: 13px;
-  font-size: 1.5em;
+  margin-top: -3px;
+  font-size: 20px;
   text-decoration: none;
   float: left;
   padding: 5px;
-  background-color: #ddd;
+  border-bottom: 1px solid #ccc;
 }
 #header #button li a:hover {
   font-size: 25px;
-  margin-top: -6px;
-  padding-bottom: 22px;
+  margin-top: -10px;
+  padding-bottom: 10px;
   color: #fff;
   background-color: #aaa;
+  border-bottom: 3px solid #76b41c;
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
