@@ -4,7 +4,7 @@
   <subtitle><![CDATA[get a real life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://goldencui.org/"/>
-  <updated>2014-09-30T06:58:20.114Z</updated>
+  <updated>2014-10-02T17:54:49.183Z</updated>
   <id>http://goldencui.org/</id>
   
   <author>
@@ -15,11 +15,50 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[win8-64位安装numpy、scipy和matplotlib]]></title>
+    <link href="http://goldencui.org/2014/10/02/new/"/>
+    <id>http://goldencui.org/2014/10/02/new/</id>
+    <published>2014-10-02T08:47:04.000Z</published>
+    <updated>2014-10-02T17:48:56.000Z</updated>
+    <content type="html"><![CDATA[<hr>
+<p>最近想使用python做一些机器学习方向的算法实现，使用python做数据分析和矩阵运算什么的常需要三个库文件：numpy、scipy和matplotlib，于是着手安装。<br>我自己机子的配置是win8+64位操作系统，python安装的版本是3.4.1。安装这几个库首先安装numpy，然后是scipy和matplotlib。<br>查询了numpy的官网后发现根本没有64位，3.4版本python的release版本包，可能是python3.4刚更新的缘故，SourceForge的更新比较慢，还没有最新的发布。scipy和matplotlib也相同，也真是痛苦。<br>上网搜了一些解决方案，当时以为比较简单的问题，直接baidu，结果真是失望，搜索出来的都是无关紧要的内容（原谅我没有google…）。<br>终于在stackoverflow里查到了一些方案，其中一个<a href="http://stackoverflow.com/questions/11200137/installing-numpy-on-64bit-windows-7-with-python-2-7-3" target="_blank" rel="external">install numpy on 64bit win7 with python2.7.3</a>，里面提示了一个<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy" target="_blank" rel="external">资源网站</a>，网站里发布了根据<a href="https://software.intel.com/en-us/intel-mkl" target="_blank" rel="external">Intel® Math Kernel Library</a>第三方生成的最新的python库，进去看了一下，里面很多python可使用的编译好的库。<br>由于我自己python版本是3.4.1，于是选择了这几个文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numpy-MKL-<span class="number">1.9</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">SciPy-<span class="number">0.13</span>.<span class="number">2</span>.win-AMD64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">matplotlib-<span class="number">1.4</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div></pre></td></tr></table></figure>
+
+<p><a id="more"></a>安装numpy的时候一路点进去，安装快要结束的时候出现安装程序崩溃的问题。当时吓了一跳，以为是安装程序不匹配，没办法自己搞虚拟机准备用linux环境下的解决方案。后面无意间在windows下测试了一下numpy是否安装成功<br>结果</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;from numpy import import *</div><div class="line">&gt;&gt;&gt;a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line">&gt;&gt;&gt;mat(a)</div><div class="line">&gt;&gt;&gt;matrix(<span class="string">[[1,2,3]]</span>)</div></pre></td></tr></table></figure>
+
+<p>艾玛!!!  竟然没有问题，证明numpy安装应该没有错,可以使用，scipy和mat的安装也出现类似问题，不过暂时都不影响使用，不知道后续会不会出问题。之所以程序安装会出现崩溃，我怀疑应该我自己win8系统的错误或者库的兼容性问题。后面还没有完整测试这几个库，不知道是不是其它电脑也会出现类似问题，唉也毕竟是第三方的库，多有不兼容的地方还是很正常的。</p>
+<p>linux环境下的话，可以下载numpy和scipy的源码直接自己编译，不过需要安装MKL，因为本人已经不用linux很久了，所以也没有仔细阅读具体方法，<a href="https://software.intel.com/zh-cn/articles/numpyscipy-with-intel-mkl" target="_blank" rel="external">这里</a>有很清晰的流程说明。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<hr>
+<p>最近想使用python做一些机器学习方向的算法实现，使用python做数据分析和矩阵运算什么的常需要三个库文件：numpy、scipy和matplotlib，于是着手安装。<br>我自己机子的配置是win8+64位操作系统，python安装的版本是3.4.1。安装这几个库首先安装numpy，然后是scipy和matplotlib。<br>查询了numpy的官网后发现根本没有64位，3.4版本python的release版本包，可能是python3.4刚更新的缘故，SourceForge的更新比较慢，还没有最新的发布。scipy和matplotlib也相同，也真是痛苦。<br>上网搜了一些解决方案，当时以为比较简单的问题，直接baidu，结果真是失望，搜索出来的都是无关紧要的内容（原谅我没有google…）。<br>终于在stackoverflow里查到了一些方案，其中一个<a href="http://stackoverflow.com/questions/11200137/installing-numpy-on-64bit-windows-7-with-python-2-7-3" target="_blank" rel="external">install numpy on 64bit win7 with python2.7.3</a>，里面提示了一个<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy" target="_blank" rel="external">资源网站</a>，网站里发布了根据<a href="https://software.intel.com/en-us/intel-mkl" target="_blank" rel="external">Intel® Math Kernel Library</a>第三方生成的最新的python库，进去看了一下，里面很多python可使用的编译好的库。<br>由于我自己python版本是3.4.1，于是选择了这几个文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numpy-MKL-<span class="number">1.9</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">SciPy-<span class="number">0.13</span>.<span class="number">2</span>.win-AMD64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">matplotlib-<span class="number">1.4</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div></pre></td></tr></table></figure>
+
+<p>]]>
+    
+    </summary>
+    
+      <category term="numpy" scheme="http://goldencui.org/tags/numpy/"/>
+    
+      <category term="scipy" scheme="http://goldencui.org/tags/scipy/"/>
+    
+      <category term="matplotlib" scheme="http://goldencui.org/tags/matplotlib/"/>
+    
+      <category term="python" scheme="http://goldencui.org/tags/python/"/>
+    
+      <category term="ML" scheme="http://goldencui.org/tags/ML/"/>
+    
+      <category term="python" scheme="http://goldencui.org/categories/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[基于FPGA的SOPC系统设计tips]]></title>
     <link href="http://goldencui.org/2014/09/26/%E5%9F%BA%E4%BA%8EFPGA%E7%9A%84SOPC%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1tips/"/>
     <id>http://goldencui.org/2014/09/26/基于FPGA的SOPC系统设计tips/</id>
     <published>2014-09-26T09:57:53.000Z</published>
-    <updated>2014-09-30T06:57:27.000Z</updated>
+    <updated>2014-10-02T17:49:47.000Z</updated>
     <content type="html"><![CDATA[<p> 之前做了半年的基于FPGA的SOPC的研究，期间遇到很多问题，对于我这个以前只搞过软件的人来说简直是一种折磨，从最简单的串口信息获取，到FPGA外设驱动,这期间遇到很多困难，好在老天有眼一一克服，这篇文章零散的记录基于FPGA嵌入式PPC440微处理器+standalone模式下系统编程方面的操作，以tips为形式展现，只列出系统构建过程中遇到的问题以及解决方法。一些XILINX官网可以查到的技术资料这里暂且不提，后面会附上链接。</p>
 <h2 id="1-_浮点数据串口输出">1. 浮点数据串口输出</h2>
 <p>XILINX公司提供的标准c一部分实现，并不是所有。它提供的标准串口输出函数包括xil_printf(),printnum();前一个函数和标准c相似，printnum()输出数字型数据。但是自己项目中涉及到浮点型数据的展示，所以想着xil_printf(“%f”,float_data)，发现根本不行，检查了xil_print()的源码，发现根本没有浮点输出的模式（orz…）。<br>仔细检查了XILINX SDK的技术文档，发现它提供了另一个标准函数的实现sprintf()，和print()函数，print()函数就是打印字符类型数据，所以我们可以把浮点类型数据转变为char*字符串，然后输出。所以包装一下，加入了double型和float型数据的打印程序：<br><a id="more"></a></p>
@@ -64,7 +103,11 @@
     
     </summary>
     
-      <category term="SOPC XILINX PPC" scheme="http://goldencui.org/tags/SOPC-XILINX-PPC/"/>
+      <category term="SOPC" scheme="http://goldencui.org/tags/SOPC/"/>
+    
+      <category term="XILINX" scheme="http://goldencui.org/tags/XILINX/"/>
+    
+      <category term="PPC" scheme="http://goldencui.org/tags/PPC/"/>
     
       <category term="嵌入式" scheme="http://goldencui.org/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
