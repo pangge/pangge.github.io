@@ -4,7 +4,7 @@
   <subtitle><![CDATA[get a real life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://goldencui.org/"/>
-  <updated>2014-10-04T02:39:56.833Z</updated>
+  <updated>2014-10-04T07:48:35.022Z</updated>
   <id>http://goldencui.org/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[win8-64位下python安装numpy、scipy和matplotlib]]></title>
-    <link href="http://goldencui.org/2014/10/02/win8-64%E4%BD%8D%E4%B8%8Bpython%E5%AE%89%E8%A3%85numpy%E3%80%81scipy%E5%92%8Cmatplotlib/"/>
-    <id>http://goldencui.org/2014/10/02/win8-64位下python安装numpy、scipy和matplotlib/</id>
+    <title><![CDATA[win64位系统下python安装numpy、scipy和matplotlib]]></title>
+    <link href="http://goldencui.org/2014/10/02/win64%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%B8%8Bpython%E5%AE%89%E8%A3%85numpy%E3%80%81scipy%E5%92%8Cmatplotlib/"/>
+    <id>http://goldencui.org/2014/10/02/win64位系统下python安装numpy、scipy和matplotlib/</id>
     <published>2014-10-02T08:47:04.000Z</published>
-    <updated>2014-10-02T17:57:58.000Z</updated>
+    <updated>2014-10-04T07:21:38.000Z</updated>
     <content type="html"><![CDATA[<hr>
 <p>最近想使用python做一些机器学习方向的算法实现，使用python做数据分析和矩阵运算什么的常需要三个库文件：numpy、scipy和matplotlib，于是着手安装。<br>我自己机子的配置是win8+64位操作系统，python安装的版本是3.4.1。安装这几个库首先安装numpy，然后是scipy和matplotlib。<br>查询了numpy的官网后发现根本没有64位，3.4版本python的release版本包，可能是python3.4刚更新的缘故，SourceForge的更新比较慢，还没有最新的发布。scipy和matplotlib也相同，也真是痛苦。<br>上网搜了一些解决方案，当时以为比较简单的问题，直接baidu，结果真是失望，搜索出来的都是无关紧要的内容（原谅我没有google…）。<br>终于在stackoverflow里查到了一些方案，其中一个<a href="http://stackoverflow.com/questions/11200137/installing-numpy-on-64bit-windows-7-with-python-2-7-3" target="_blank" rel="external">install numpy on 64bit win7 with python2.7.3</a>，里面提示了一个<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy" target="_blank" rel="external">资源网站</a>，网站里发布了根据<a href="https://software.intel.com/en-us/intel-mkl" target="_blank" rel="external">Intel® Math Kernel Library</a>第三方生成的最新的python库，进去看了一下，里面很多python可使用的编译好的库。<br>由于我自己python版本是3.4.1，于是选择了这几个文件：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numpy-MKL-<span class="number">1.9</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">SciPy-<span class="number">0.13</span>.<span class="number">2</span>.win-AMD64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div><div class="line">matplotlib-<span class="number">1.4</span>.<span class="number">0</span>.win-amd64-<span class="keyword">py3</span>.<span class="number">4</span>.<span class="keyword">exe</span></div></pre></td></tr></table></figure>
@@ -47,7 +47,7 @@
     
       <category term="python" scheme="http://goldencui.org/tags/python/"/>
     
-      <category term="ML" scheme="http://goldencui.org/tags/ML/"/>
+      <category term="win64" scheme="http://goldencui.org/tags/win64/"/>
     
       <category term="python" scheme="http://goldencui.org/categories/python/"/>
     
