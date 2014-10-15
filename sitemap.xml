@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://goldencui.org/2014/10/02/win64%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%B8%8Bpython%E5%AE%89%E8%A3%85numpy%E3%80%81scipy%E5%92%8Cmatplotlib/</loc>
-    <lastmod>2014-10-04T07:21:38.000Z</lastmod>
+    <loc>http://goldencui.org/2014/10/15/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%88%AC%E8%99%AB(python%203.4.1%E5%AE%9E%E7%8E%B0)/</loc>
+    <lastmod>2014-10-15T04:03:30.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://goldencui.org/2014/10/02/windows64%E4%BD%8D%E7%8E%AF%E5%A2%83%E4%B8%8Bpython%E5%AE%89%E8%A3%85numpy%E3%80%81scipy%E5%92%8Cmatplotlib/</loc>
+    <lastmod>2014-10-15T03:45:33.000Z</lastmod>
   </url>
   
   <url>
