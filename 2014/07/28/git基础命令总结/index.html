@@ -87,37 +87,37 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <hr>
 <h1 id="1_github_代码提交">1  github 代码提交</h1>
 <p><strong>创建新的版本库</strong></p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">touch README.md</div><div class="line">$git init</div><div class="line">$git add README.md</div><div class="line">$git commit -m <span class="string">"first commit"</span></div><div class="line">$git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">touch README.md</div><div class="line"><span class="variable">$git</span> init</div><div class="line"><span class="variable">$git</span> add README.md</div><div class="line"><span class="variable">$git</span> commit -<span class="keyword">m</span> <span class="string">"first commit"</span></div><div class="line"><span class="variable">$git</span> remote add origin git<span class="variable">@github</span>.com:youname/youproject.git</div><div class="line"><span class="variable">$git</span> <span class="keyword">push</span> -u origin master</div></pre></td></tr></table></figure>
 
 <p><strong>推送现有的版本库</strong></p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> remote add origin git<span class="variable">@github</span>.com:youname/youproject.git</div><div class="line"><span class="variable">$git</span> <span class="keyword">push</span> -u origin master</div></pre></td></tr></table></figure>
 
 <p><strong>添加修改的版本库</strong><br><a id="more"></a></p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$git add . <span class="comment">// .表示添加所有文件 </span></div><div class="line">$git commit -m <span class="string">"修改日志"</span></div><div class="line">$git push -u origin master</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> add . <span class="comment">// .表示添加所有文件 </span></div><div class="line"><span class="variable">$git</span> commit -m <span class="string">"修改日志"</span></div><div class="line"><span class="variable">$git</span> push -u origin master</div></pre></td></tr></table></figure>
 
 <p><strong><em>错误解决</em></strong></p>
 <hr>
 <h4 id="1-运行：">1.运行：</h4>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git<span class="annotation">@github</span>.com:youname/youproject.git</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> remote add origin git<span class="variable">@github</span>.com:youname/youproject.git</div></pre></td></tr></table></figure>
 
 <p>错误提示：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal: remote origin already exists.</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fata<span class="variable">l:</span> remote origin already <span class="built_in">exists</span>.</div></pre></td></tr></table></figure>
 
 <p>解决办法：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$git remote rm origin</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> remote rm origin</div></pre></td></tr></table></figure>
 
 <h4 id="2-运行：">2.运行：</h4>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git $ git push origin master</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="variable">$ </span>git push origin master</div></pre></td></tr></table></figure>
 
 <p>错误提示：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:failed to push som refs to</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">error</span>:failed <span class="keyword">to</span> push som refs <span class="keyword">to</span></div></pre></td></tr></table></figure>
 
 <p>解决办法：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master <span class="comment">// 先把远程服务器中版本拉取下来，再push</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master <span class="comment">// 先把远程服务器中版本拉取下来，再push</span></div></pre></td></tr></table></figure>
 
 <hr>
 <h1 id="2_github_代码clone">2  github 代码clone</h1>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git<span class="annotation">@github</span>.com:youname/youproject.git  <span class="string">"path"</span> <span class="comment">// path 要存放本地版本库的地址</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>git clone git<span class="variable">@github</span>.<span class="symbol">com:</span>youname/youproject.git  <span class="string">"path"</span> /<span class="regexp">/ path 要存放本地版本库的地址</span></div></pre></td></tr></table></figure>
 
 <p><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png" alt="GitHub" title="GitHub cat"></p>
 
