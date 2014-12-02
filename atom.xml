@@ -4,7 +4,7 @@
   <subtitle><![CDATA[get a real life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://goldencui.org/"/>
-  <updated>2014-10-30T03:32:26.303Z</updated>
+  <updated>2014-12-02T11:21:04.561Z</updated>
   <id>http://goldencui.org/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[简明深度学习方法概述（一）]]></title>
+    <link href="http://goldencui.org/2014/12/02/%E7%AE%80%E6%98%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://goldencui.org/2014/12/02/简明深度学习方法概述（一）/</id>
+    <published>2014-12-02T10:09:00.000Z</published>
+    <updated>2014-12-02T11:19:00.000Z</updated>
+    <content type="html"><![CDATA[<p><em>说明：本文主要是翻译整理Li Deng 和 Dong Yu所著的《Deep Learning：Methods and Application》文章并没有全文翻译，而是一个总结并加入个人理解生成的概括性文章。如果要深入了解推荐读原文。博主真心能力有限，所以理解之处错误在所难免，请勿喷。</em></p>
+<h1 id="一、_综述"><strong>一、    综述</strong></h1>
+<p> <img src="/imgs/nn0.jpg" alt=""><br><a id="more"></a><br>在这片介绍性文章开始，先简单介绍一下深度学习的概念。深度学习（Deap Learning），是机器学习的一个新的研究领域，它的定义有很多，这里随意列举一两个定义你们感受一下（老外的语言还是很干练的）：</p>
+<p><em>1) “A class of machine learning techniques that exploit many layers of non-linear information processing for supervised or unsupervised feature extraction and transformation, and for pattern analysis and classification.”<br>2) “deep learning is a set of algorithms in machine learning that attempt to learning in multiple levels, corresponding to different levels of abstraction. It typically uses artificial neural networks. The levels in these learned statistical models correspond to distinct levels of concepts, where higher-level concepts are defined from lower-level ones, and the same lower-level concepts can help to define many higher-level concepts”</em><br>上述英文定义的共同点包括两个主要方面：</p>
+<ol>
+<li>模型由多个层次或多个非线性信息处理模块阶段组成</li>
+<li>特征表示的监督和非监督学习方法在深度模型的更高抽象层次里</li>
+</ol>
+<p>深度学习是多学科领域的交叉，比如神经网络、人工智能、图建模、最优化理论、模式识别和信号处理。需要注意的是本文所描述的深度学习是在信号和信息处理内容中学习出一种深度结构。它不是对信号和信息处理知识的理解，尽管某些意义上说它俩相似，但深度学习重点在于学习出一种深度网络结构，是实实在在存在的一种计算机可存储结构，这种结构表示了信号的某种意义上的内涵。<br>从06年开始，深度结构学习方法（深度学习或者分层学习方法）作为机器学习领域的新的研究方向出现。由于三种主要领域的技术进步（比如芯片处理性能的巨大提升，数据爆炸性增长和机器学习与信信号处理研究的进步），在过去的短短几年时间，深度学习技术得到快速发展，已经深深的影响了学术领域，其研究涉及的应用领域包括计算机视觉、语音识别、对话语音识别、图像特征编码、语意表达分类、自然语言理解、手写识别、音频处理、信息检索、机器人学。<br>由于深度学习在众多领域表现比较好的性能，越来越多的学术机构把目光投入深度学习领域。今年来活跃在机器学习领域的研究机构包括众多高校比如斯坦福，伯克利，还有一些企业例如Google，IBM 研究院，微软研究院，FaceBook，百度等等。这些研究机构在计算机领域的众多应用中都成功利用了深度学习方法，甚至有一个关于分子生物学的研究指出他们利用深度学习方法引领下发现了新的药物。<br>本文只是阐述了截止2014年最新的有关深度学习研究的一部分内容综述，如果需要了解这个领域的最新进展，推荐到以下网址获取：</p>
+<ul>
+<li><a href="http://deeplearning.net/reading-list/" target="_blank" rel="external">http://deeplearning.net/reading-list/</a></li>
+<li><a href="http://ufldl.stanford.edu/wiki/index.php/UFLDL_Recommended_Readings" target="_blank" rel="external">http://ufldl.stanford.edu/wiki/index.php/UFLDL_Recommended_Readings</a></li>
+<li><a href="http://www.cs.toronto.edu/∼hinton/" target="_blank" rel="external">http://www.cs.toronto.edu/∼hinton/</a></li>
+<li><a href="http://deeplearning.net/tutorial/" target="_blank" rel="external">http://deeplearning.net/tutorial/</a></li>
+<li><a href="http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial" target="_blank" rel="external">http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial</a></li>
+</ul>
+<h1 id="二、_深度学习历史"><strong>二、    深度学习历史</strong></h1>
+<p>直到近些年，大多数机器学习和信号处理技术大多还是采用浅层的结构，这些典型结构包含至多一层或两层非线性特征变换。这种浅层结构的代表比如高斯混合模型（GMM），线性或非线性动态系统，条件随机场（CRFs），最大熵模型，支持向量机（SVMs），逻辑回归（LR），核回归，多层感知器（MLPS）。例如，SVMs 使用了一个浅层的线性模式分类器，当使用核技巧的话，包含一个特征转换层。浅层结构方法（既机器学习方法）已经在一些简单和有限制难题中得到了比较好的结果，但是当处理复杂的现实世界的问题时（例如语音，自然声音图像，语言，视场等），它们有限的模型复杂度和表达能力就遇到了困难。<br>人类自我信息的处理和理解（例如视觉信息，声音信息），一直以来都比较复杂，因此需要更深的结构算法从输入层中提取特征。比如说，语音生成和理解系统在把波形信号转变成语言级别的信号的时候，就是设置了清晰的多层结构去学习。历史上来看，深度学习的概念起源于神经网络的研究。含有多隐层的前馈神经网络（BP）或者多层感知器（多隐层MLPs通常指深度神经网络DNNs），就是一个深度结构模型的例子。BP神经网络流行在上世纪80年的，已经成为广为人知的学习算法。遗憾的是，加入多隐层的BP神经网络算法效果却并不好（网络中普遍存在的非凸目标函数的局部最优化调整问题是主要的训练难题）。随着网络深度的增加，越难达到局部最优化。而这个困境的原因是忽视了机器学习和信号处理领域的研究，比如机器学习方法中的SVM,CRF,和最大熵模型，包含损失函数，使用这些方法可以有效获得全局优化。<br>深信网络（deep belief network DBN）提出后，深度模型的最优化困难可以在经验上得到降低。DBN是由一组限制玻尔兹曼机（RBMs）组成的层次网络学习算法，它可以在线性的时间复杂度内达到模型参数的最优化。使用MLP采用合理配置初始化权值后，DBN经常能表现的比随机参数更好一点。同理，含多隐层的MLPs 或者深度神经网络（DNN）学术上也被称为DBNs。最近，研究人员已经更精细的区分DNNs和DBNs，如果使用DBN去初始化DNN的训练的话，那么这个网络就可以被称为DBN-DNN。这上述的深度学习的理论提出后，学术界不断提出改进的理论来丰富深度学习的内容，深度学习理论已经得到了极大的丰富和发展。<br>我们可以从另一个角度来了解这个发展历程，下图展现了不同时代的神经网络被宣传的热度。巅峰期出现在1980s和1990s，此时被称为神经网络的第二代。DBN在06年被研究出来，当DBN被用在初始化DNN的时候，学习算法的效率就变的更加有效，这促进了学术界连续的快速研究成果。DBN和DNN的产业级语音特征提取和识别应用出现在09年，当时产业界和学术界以及深度学习的研究专家有着密切的相互合作。这种合作快速发展了语音识别的深度学习方法，并由此而取得了巨大成功。<br> <img src="/imgs/nn1.png" alt="industry scale"><br>图中“plateau of productivity（稳定产出）”短语目前还没有到来，但是期望在未来将会比图中显示出的走势更加剧烈，像标记中的虚线那样，而我们就是刚刚处于这个时期，尤其最近深度学习概念屡屡被热炒，其发展热度可见一斑。</p>
+<p><em>未完待续…</em></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><em>说明：本文主要是翻译整理Li Deng 和 Dong Yu所著的《Deep Learning：Methods and Application》文章并没有全文翻译，而是一个总结并加入个人理解生成的概括性文章。如果要深入了解推荐读原文。博主真心能力有限，所以理解之处错误在所难免，请勿喷。</em></p>
+<h1 id="一、_综述"><strong>一、    综述</strong></h1>
+<p> <img src="/imgs/nn0.jpg" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="Machine Learning" scheme="http://goldencui.org/tags/Machine-Learning/"/>
+    
+      <category term="Deep Learning" scheme="http://goldencui.org/tags/Deep-Learning/"/>
+    
+      <category term="DL&amp;ML" scheme="http://goldencui.org/categories/DL&ML/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[程序员与画家]]></title>
