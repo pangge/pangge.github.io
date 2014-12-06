@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fdb61424190f6ff63d2f7155a0801ce6b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="KLZdjUwwq3PbCgU3H6iANTWX72y_nU4xSSH59QKZCPk" />
+  <meta name="baidu-site-verification" content="kuYiL0rhWt" />
+  <meta name="Keywords" content="崔超文's 个人技术博客 崔超文 崔超文 崔超文">
+  
+  <title>简明深度学习方法概述（二） | goldencui</title>
+  <meta name="author" content="goldencwcui">
+  
+  <meta name="description" content="goldencwcui：崔超文&#39;s blog；goldencwcui主要涉及语言：c++/c perl python matlab；goldencwcui主要领域：FPGA+SOPC Machine Learning Image processing">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="简明深度学习方法概述（二）"/>
+  <meta property="og:site_name" content="goldencui"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="goldencui" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">goldencui</a></h1>
+  <h2><a href="/">get a real life</a></h2>
+</div>
+
+<div id="menu" class="alignright">
+  <div class="alignright">
+  <form action="http://www.baidu.com/baidu">
+	<input type=text name=word>
+	<input type="submit" value="GO">
+	<input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=si type=hidden value="www.goldencui.org">
+  </form>
+  </div>
+  <div class="clearfix"></div>
+<nav id="main-nav">
+   <ul id="button">
+     <div class="clearfix"></div>
+     
+       <li><a id="lia" href="/"><h3>首页</h3></a></li>
+     
+       <li><a id="lia" href="/archives"><h3>归档</h3></a></li>
+     
+       <li><a id="lia" href="/About"><h3>关于</h3></a></li>
+     
+	 <li><a id="rss" href="/atom.xml"><img src="/imgs/rss.png" width="25" height="25" /><b>RSS</b></a></li>
+   </ul>
+   <div class="clearfix"></div>
+  </nav>
+</div>
+
+
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-06T02:00:08.000Z"><a href="/2014/12/06/简明深度学习方法概述（二）/">12月 6 2014</a></time>
+      
+      
+  
+    <h1 class="title">简明深度学习方法概述（二）</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p> <img src="/imgs/nn2.jpg" alt=""></p>
+<h1 id="三类深度学习网络"><strong>三类深度学习网络</strong></h1>
+<p>本篇介绍深度学习的大致分类，根据其应用方式的不同，我们可以粗分类几种不同结构的深度学习方法。</p>
+<h2 id="(1)_三种深度学习网络分类方式">(1)   三种深度学习网络分类方式</h2>
+<p><a id="more"></a><br>如文章（一）中所述，深度网络是指一大类的机器学习和各种层次结构结合的网络，其特性是使用多层的非线性信息处理方法（这和一般神经网络结构类似，包含了更多的隐层）。根据这些结构和技术的应用领域比如综合/生成或识别/分类，我们可以大致的把这些结构分为三类：</p>
+<ol>
+<li><strong>非监督学习或生成学习深度网络</strong>，当目标的类标签信息不可获取的时候，这类深度网络趋向于为了模式分析和综合的目的，提取可视数据中高度自相关性（可参考机器学习中对于非监督学习的描述）。在学术上，非监督特征或者表示学习指的就是这类深度网络。当用在生成模型中的时候，很多这类模型也用来描述可视数据的统计分布和他们的相关类属的分布，并把它们作为数据的一部分。</li>
+<li><strong>监督学习深度网络</strong>，这类模型用在直接提供模式分类中的识别能力，经常以描述可视数据的类的后验分布形式给出。类标签可以直接或间接得到（因为是监督学习）。</li>
+<li><strong>混合深度网络</strong>，目标是辅加生成学习或者深度非监督学习效果的数据分类问题。一般可以使用最优化和第2类深度网络模型来解决。这种网络使用监督学习的标准去估计任何深度生成模型或者非监督深度网络中的参数。</li>
+</ol>
+<p>“混合”这一称呼和一般学术指的不同，学术上可能指把一个神经网络的概率输出反馈到HMM（隐形马尔科夫模型，推荐李航的《统计学习方法》中了解）中所组成的语音识别系统。<br>如果按照普通的采用机器学习的惯例，那就可以很自然的把深度学习技术分为深度判别模型（监督学习）（比如深度神经网络或者DNNS，递归神经网络或者RNNs，卷积神经网络或者CNNs等等）和生成或非监督模型（比如限制玻尔兹曼机或者RBMs，深信网络或者DBNs，深度玻尔兹曼机（DBMs）规则自编码器等等）。但这两种分类方式都忽略了生成或非监督模型通过最优化和正则化可以极大的改进DNNs和其他深度判定模型和监督模型的训练。并且，深度无监督学习网络未必能从数据中有意义的采样。我们注意到已经有研究通过生成传统的去噪自编码器来来有效采样（具体论文不列出，大家可以去搜搜看）。不管怎么说，传统的两种分类方式的确指出了监督学习和非监督学习深度网络中的不同点。比较上面提到的两类深度学习方法，深度监督学习方法例如DNNs是通常可以有效测试和训练的模型，可以灵活构建并且适合复杂系统的首位相连的学习（比如loopy belief propagation）。另一方面来说，深度非监督学习模型，特别是概率生成模型，更容易解释，容易嵌入局部先验知识，容易组织和容易处理不确定性。但是它在推理学习和复杂系统学习方面比较困难。这些区分也保留在本文推荐的三类深度网络模型分类里面，这是一个好现象。</p>
+<h2 id="(2)_非监督学习或生成学习深度网络">(2)      非监督学习或生成学习深度网络</h2>
+<p>非监督学习指学习没有监督信息的数据（比如根本没有数据的类标签，无法根据数据的类属性分类）。很多这类深度网络可以从神经网络知识里借鉴生成，比如RBMs，DBNs，DBMs和生成去噪自编码器。还有一些比如稀疏编码网络以及深度自编码器的原始形式。下面给出这类网络的样例以及相关文献信息，具体内容可以根据兴趣学习：</p>
+<p><em>[1]    Y. Bengio, N. Boulanger, and R. Pascanu. Advances in optimizing recurrent networks. In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP). 2013<br>[2]    Y. Bengio, P. Lamblin, D. Popovici, and H. Larochelle. Greedy layerwise training of deep networks. In Proceedings of Neural Information Processing Systems (NIPS). 2006.<br>[3]    Y. Bengio. Learning deep architectures for AI. in Foundations and Trends in Machine Learning, 2(1):1–127, 2009.<br>[4]    Y. LeCun, S. Chopra, M. Ranzato, and F. Huang. Energy-based models in document recognition and computer vision. In Proceedings of International Conference on Document Analysis and Recognition (ICDAR).2007.<br>[5]    J. Ngiam, Z. Chen, P. Koh, and A. Ng. Learning deep energy models. In Proceedings of International Conference on Machine Learning (ICML).2011.<br>[6]    L. Deng, M. Seltzer, D. Yu, A. Acero, A. Mohamed, and G. Hinton.Binary coding of speech spectrograms using a deep autoencoder. In Proceedings of Interspeech. 2010.<br>[7]    G. Hinton and R. Salakhutdinov. Reducing the dimensionality of data with neural networks. Science, 313(5786):504–507, July 2006.<br>[8]    P. Vincent, H. Larochelle, I. Lajoie, Y. Bengio, and P. Manzagol.Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion. Journal of Machine Learning Research, 11:3371–3408, 2010.<br>[9]    G. Hinton. A better way to learn features. Communications of the Association for Computing Machinery (ACM), 54(10), October 2011.<br>[10]    I. Goodfellow, M. Mirza, A. Courville, and Y. Bengio. Multi-prediction deep boltzmann machines. In Proceedings of Neural Information Processing Systems (NIPS). 2013.<br>[11]    R. Salakhutdinov and G. Hinton. Deep boltzmann machines. In Proceedings of Artificial Intelligence and Statistics (AISTATS). 2009.<br>[12]    R. Salakhutdinov and G. Hinton. A better way to pretrain deep Boltzmann machines. In Proceedings of Neural Information Processing Systems (NIPS). 2012.<br>[13]    N. Srivastava and R. Salakhutdinov. Multimodal learning with deep boltzmann machines. In Proceedings of Neural Information Processing Systems (NIPS). 2012.<br>[14]    G. Dahl, M. Ranzato, A. Mohamed, and G. Hinton. Phone recognition with the mean-covariance restricted boltzmann machine. In Proceedings of Neural Information Processing Systems (NIPS), volume 23, pages 469–477. 2010.<br>[15]    M. Ranzato and G. Hinton. Modeling pixel means and covariances using factorized third-order boltzmann machines. In Proceedings of Computer Vision and Pattern Recognition (CVPR). 2010.<br>[16]    A. Mohamed, G. Hinton, and G. Penn. Understanding how deep belief networks perform acoustic modelling. In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP). 2012.<br>[17]    R. Gens and P. Domingo. Discriminative learning of sum-product networks.Neural Information Processing Systems (NIPS), 2012.<br>[18]    H. Poon and P. Domingos. Sum-product networks: A new deep architecture.In Proceedings of Uncertainty in Artificial Intelligence. 2011.<br>[19]    J. Martens and I. Sutskever. Learning recurrent neural networks with hessian-free optimization. In Proceedings of International Conference on Machine Learning (ICML). 2011.<br>[20]    Y. Bengio. Deep learning of representations: Looking forward. In Statistical Language and Speech Processing, pages 1–37. Springer, 2013.<br>[21]    I. Sutskever. Training recurrent neural networks. Ph.D. Thesis, University of Toronto, 2013.<br>[22]    T. Mikolov, M. Karafiat, L. Burget, J. Cernocky, and S. Khudanpur. Recurrent neural network based language model. In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP), pages 1045–1048. 2010.<br>[23]    G. Mesnil, X. He, L. Deng, and Y. Bengio. Investigation of recurrentneural-network architectures and learning methods for spoken language understanding. In Proceedings of Interspeech. 2013.<br>[24]    K. Yao, G. Zweig, M. Hwang, Y. Shi, and D. Yu. Recurrent neural networks for language understanding. In Proceedings of Interspeech.2013.<br>[25]    Z. Ling, L. Deng, and D. Yu. Modeling spectral envelopes using restricted boltzmann machines for statistical parametric speech synthesis.In International Conference on Acoustics Speech and Signal Processing (ICASSP), pages 7825–7829. 2013.<br>[26]    M. Shannon, H. Zen, and W. Byrne. Autoregressive models for statistical parametric speech synthesis. IEEE Transactions on Audio, Speech,Language Processing, 21(3):587–597, 2013.<br>[27]    H. Zen, Y. Nankaku, and K. Tokuda. Continuous stochastic feature mapping based on trajectory HMMs. IEEE Transactions on Audio,Speech, and Language Processings, 19(2):417–430, February 2011.<br>[28]    M. Wohlmayr, M. Stark, and F. Pernkopf. A probabilistic interaction model for multi-pitch tracking with factorial hidden markov model.IEEE Transactions on Audio, Speech, and Language Processing, 19(4),May 2011.<br>[29]    R. Socher, C. Lin, A. Ng, and C. Manning. Parsing natural scenes and natural language with recursive neural networks. In Proceedings of International Conference on Machine Learning (ICML). 2011.<br>[30]    R. Socher, Y. Bengio, and C. Manning. Deep learning for NLP.Tutorial at Association of Computational Logistics (ACL), 2012, and North American Chapter of the Association of Computational Linguistics (NAACL), 2013.<br><a href="http://www.socher.org/index.php/DeepLearning" target="_blank" rel="external">http://www.socher.org/index.php/DeepLearning</a> Tutorial.</em><br>（有点多。。。大家可以根据需要检索，不过都是比较新的索引文献，值得一读）</p>
+<h2 id="(3)_监督学习深度网络">(3)      监督学习深度网络</h2>
+<p>很多信号和信息处理方面的监督学习的判别技术都是浅层结构比如HMMs（隐形马尔科夫模型）和条件随机场（CRFs），条件随机场本质上就是一个浅层判别模型，在输入特征和多度特征上用线性关系描述。最近深度组织CRFs被提出来，它存储每一层CRF的输出，和原始输入数据一起传输到它的更高层。各种版本的深度组织CRFs已经成功的应用在了电话语音识别，语音识别和自然语言处理上。下面给出监督学习相关的深度网络方面的参考文献，具体内容大家根据兴趣查找阅读：</p>
+<p><em>[1]    M. Gibson and T. Hain. Error approximation and minimum phone error acoustic model estimation. IEEE Transactions on Audio, Speech, and Language Processing, 18(6):1269–1279, August 2010.<br>[2]    Heintz, E. Fosler-Lussier, and C. Brew. Discriminative input stream combination for conditional random field phone recognition. IEEE Transactions on Audio, Speech, and Language Processing, 17(8):1533–1546, November 2009.<br>[3]    G. Heigold, H. Ney, P. Lehnen, T. Gass, and R. Schluter. Equivalence of generative and log-liner models. IEEE Transactions on Audio, Speech,and Language Processing, 19(5):1138–1148, February 2011.<br>[4]    D. Yu, S. Wang, and L. Deng. Sequential labeling using deep-structured conditional random fields. Journal of Selected Topics in Signal Processing,4:965–973, 2010.<br>[5]    D. Yu and L. Deng. Deep-structured hidden conditional random fields for phonetic recognition. In Proceedings of Interspeech. September 2010.<br>[6]    D. Yu, S. Wang, and L. Deng. Sequential labeling using deep-structured conditional random fields. Journal of Selected Topics in Signal Processing,4:965–973, 2010.<br>[7]    N. Morgan. Deep and wide: Multiple layers in automatic speech recognition.IEEE Transactions on Audio, Speech, &amp; Language Processing,20(1), January 2012.<br>[8]    L. Deng and D. Yu. Deep convex network: A scalable architecture for speech pattern classification. In Proceedings of Interspeech. 2011<br>[9]    L. Deng, D. Yu, and J. Platt. Scalable stacking and learning for building deep architectures. In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP). 2012a.<br>[10]    B. Hutchinson, L. Deng, and D. Yu. A deep architecture with bilinear modeling of hidden representations: Applications to phonetic recognition.In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP). 2012.<br>[11]    L. Deng, G. Tur, X. He, and D. Hakkani-Tur. Use of kernel deep convex networks and end-to-end learning for spoken language understanding.In Proceedings of IEEE Workshop on Spoken Language Technologies.December 2012.<br>[12]    L. Deng, K. Hassanein, and M. Elmasry. Analysis of correlation structure for a neural predictive model with application to speech recognition.Neural Networks, 7(2):331–339, 1994.<br>[13]    A. Graves. Sequence transduction with recurrent neural networks. Representation<br>[14]    Learning Workshop, International Conference on Machine Learning (ICML), 2012<br>[15]    A. Graves, A. Mohamed, and G. Hinton. Speech recognition with deep recurrent neural networks. In Proceedings of International Conference on Acoustics Speech and Signal Processing (ICASSP). 2013.</em></p>
+<h2 id="(4)_混合深度网络">(4)    混合深度网络</h2>
+<p>“混合”这个名词使用在这个类别里正是指一类既包含和利用了生成模型也用了判别模型的一种深度网络。在目前学术圈发表的混合结构模型中，生成组件最常被用来帮助判别模型，判别模型是这个混合模型的最终目标。生成模型如何促进判别模型可以从下列两种观点来佐证：</p>
+<ol>
+<li><strong>最优化观点</strong>，生成模型就是在非监督数据集上根据这种观点被训练的。它为高度非线性参数估计难题提供了极好的初始化参数（通常深度网络中使用的名词“预训练”就是因此被引入的）。</li>
+<li><strong>正则化观点</strong>，据此非监督学习模型能有效的提供一个在一组模型函数集上的先验。</li>
+</ol>
+<p>下面提供关于这类模型相关的参考文献，相信大家可以从中学习到比较深入的知识。</p>
+<p><em>[1]    D. Erhan, Y. Bengio, A. Courvelle, P.Manzagol, P. Vencent, and S. Bengio.Why does unsupervised pre-training help deep learning? Journal on Machine Learning Research, pages 201–208, 2010.<br>[2]    D. Erhan, Y. Bengio, A. Courvelle, P.Manzagol, P. Vencent, and S. Bengio.Why does unsupervised pre-training help deep learning? Journal on Machine Learning Research, pages 201–208, 2010.<br>[3]    A. Mohamed, D. Yu, and L. Deng. Investigation of full-sequence training of deep belief networks for speech recognition. In Proceedings of Interspeech. 2010.<br>[4]    B. Kingsbury, T. Sainath, and H. Soltau. Scalable minimum bayes risk training of deep neural network acoustic models using distributed hessian-free optimization. In Proceedings of Interspeech. 2012.<br>[5]    M. Ranzato, J. Susskind, V. Mnih, and G. Hinton. On deep generative models with applications to recognition. In Proceedings of Computer Vision and Pattern Recognition (CVPR). 2011.<br>[6]    H. Lee, R. Grosse, R. Ranganath, and A. Ng. Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations.In Proceedings of International Conference on Machine Learning (ICML). 2009.</em><br>在接下来的一篇文章中，我们将详细说明三种深度学习领域典型类型的模型。给出简单的结构描述和数学描述。这三种举例的模型可能不一定是最具代表性和有影响力的模型，不过可以作为一种说明来让大家明白区别。</p>
+
+      
+    </div>
+    <footer>
+      
+      <nav id="pagination" >
+    
+    
+    <a href="/2014/12/02/简明深度学习方法概述（一）/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+    </nav>
+        
+  
+  <div class="categories">
+    <a href="/categories/DL&ML/">DL&ML</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Machine-Learning/">Machine Learning</a>, <a href="/tags/Deep-Learning/">Deep Learning</a>
+  </div>
+
+        
+<div class="bshare-custom icon-medium-plus"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        <div class="ds-thread" data-thread-key="2014/12/06/简明深度学习方法概述（二）/"></div>  
+
+      
+      <div class="clearfix"></div>
+    </footer>
+
+  </div>
+</article>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="widget tag">
+<h3 class="title">公告</h3>
+<ul class="entry">
+<h3 class="cast">1024，程序员的节日，刚好看完<a href="http://www.ishuhui.com/archives/3634" title="one piece">one piece更新</a>，算是庆祝了。话说罗的羁绊很深，而且承袭D的意志，应该上船吧...</p>
+&nbsp;<img src="/imgs/luo.jpg" width="100" height="100"/><img src="/imgs/LAW.png" width="110" height="105"/>
+</script>
+</object>
+</ul>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/12/06/简明深度学习方法概述（二）/"><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;简明深度学习方法概述（二）</a>
+      </li>
+    
+      <li>
+        <a href="/2014/12/02/简明深度学习方法概述（一）/"><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;简明深度学习方法概述（一）</a>
+      </li>
+    
+      <li>
+        <a href="/2014/10/30/程序员与画家/"><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;程序员与画家</a>
+      </li>
+    
+      <li>
+        <a href="/2014/10/15/网络资源搜索爬虫(python 3.4.1实现)/"><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;网络资源搜索爬虫(python 3.4.1实现)</a>
+      </li>
+    
+      <li>
+        <a href="/2014/10/02/windows64位环境下python安装numpy、scipy和matplotlib/"><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;windows64位环境下python安装numpy、scipy和matplotlib</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=0&isWeibo=1&isFans=0&uid=3099146883&verifier=3f2fb334&colors=ffffff,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/DL&ML/">DL&amp;ML</a><small>2</small></li>
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/python/">python</a><small>2</small></li>
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/代码托管/">代码托管</a><small>1</small></li>
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/嵌入式/">嵌入式</a><small>1</small></li>
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/转载/">转载</a><small>1</small></li>
+  
+    <li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="/categories/随笔/">随笔</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="http://coolshell.cn/" title="程浩's blog">酷壳-CoolShell</a></li>
+<li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="http://www.foreverpx.cn/" title="潘神">Foreverpx主页</a></li>
+<li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="http://taosay.net/index.php/page/2/" title="道哥's blog">道哥的黑板报</a></li>
+<li><img src="/imgs/point.png" width="10" height="10"/>&nbsp;&nbsp;<a href="http://www.yinwang.org/" title="王垠's blog">王垠主页</a></li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 goldencwcui
+  
+</div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pangge"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+</body>
+</html>
