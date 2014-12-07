@@ -4,7 +4,7 @@
   <subtitle><![CDATA[get a real life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://goldencui.org/"/>
-  <updated>2014-12-07T13:36:22.811Z</updated>
+  <updated>2014-12-07T13:40:51.854Z</updated>
   <id>http://goldencui.org/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://goldencui.org/2014/12/07/flask-css%E4%B8%8D%E8%83%BD%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://goldencui.org/2014/12/07/flask-css不能更新的问题/</id>
     <published>2014-12-07T13:18:54.000Z</published>
-    <updated>2014-12-07T13:36:04.000Z</updated>
-    <content type="html"><![CDATA[<p>最近在不误正业的做一个周末项目。尝试用flask搭建一个小项目网站，我在windows下使用flask，其中遇到一个问题，当第一次写好css文件之后，网页特效现实正常。然后，当我更新css文件的细节之后，我还是只能看到第一次css的效果。我试过各种方法，比如查看进程重启flask，重启浏览器，甚至移植到linux下。。。（可惜还是同样的问题，困扰了很久。。。）最后我想到了会不会是浏览器缓存问题。结果不出所料，搜了stackoverflow发现别人也遇到了一样的问题。。。很好，国内网站果然比较水，完全查不到相关的细节。看看下面<a href="http://stackoverflow.com/questions/21714653/flask-css-not-updating" target="_blank" rel="external">链接</a>：<br><a id="more"></a><br> <img src="/imgs/flaskcss.jpg" alt="截图"><br>看来是flask固有问题，在flask官方文档里给出了<a href="http://flask.pocoo.org/snippets/40/" target="_blank" rel="external">解决办法</a>：<br><img src="/imgs/flaskcss1.jpg" alt="截图"><br>嗯，就是这些，大家自己感受吧。</p>
+    <updated>2014-12-07T13:40:34.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/imgs/flasklabel.jpg" alt="flask"><br>最近在不误正业的做一个周末项目。尝试用flask搭建一个小项目网站，我在windows下使用flask，其中遇到一个问题，当第一次写好css文件之后，网页特效现实正常。然后，当我更新css文件的细节之后，我还是只能看到第一次css的效果。我试过各种方法，比如查看进程重启flask，重启浏览器，甚至移植到linux下。。。（可惜还是同样的问题，困扰了很久。。。）最后我想到了会不会是浏览器缓存问题。结果不出所料，搜了stackoverflow发现别人也遇到了一样的问题。。。很好，国内网站果然比较水，完全查不到相关的细节。看看下面<a href="http://stackoverflow.com/questions/21714653/flask-css-not-updating" target="_blank" rel="external">链接</a>：<br><a id="more"></a><br> <img src="/imgs/flaskcss.jpg" alt="截图"><br>看来是flask固有问题，在flask官方文档里给出了<a href="http://flask.pocoo.org/snippets/40/" target="_blank" rel="external">解决办法</a>：<br><img src="/imgs/flaskcss1.jpg" alt="截图"><br>嗯，就是这些，大家自己感受吧。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近在不误正业的做一个周末项目。尝试用flask搭建一个小项目网站，我在windows下使用flask，其中遇到一个问题，当第一次写好css文件之后，网页特效现实正常。然后，当我更新css文件的细节之后，我还是只能看到第一次css的效果。我试过各种方法，比如查看进程重启flask，重启浏览器，甚至移植到linux下。。。（可惜还是同样的问题，困扰了很久。。。）最后我想到了会不会是浏览器缓存问题。结果不出所料，搜了stackoverflow发现别人也遇到了一样的问题。。。很好，国内网站果然比较水，完全查不到相关的细节。看看下面<a href="http://stackoverflow.com/questions/21714653/flask-css-not-updating" target="_blank" rel="external">链接</a>：<br>]]>
+    <![CDATA[<p><img src="/imgs/flasklabel.jpg" alt="flask"><br>最近在不误正业的做一个周末项目。尝试用flask搭建一个小项目网站，我在windows下使用flask，其中遇到一个问题，当第一次写好css文件之后，网页特效现实正常。然后，当我更新css文件的细节之后，我还是只能看到第一次css的效果。我试过各种方法，比如查看进程重启flask，重启浏览器，甚至移植到linux下。。。（可惜还是同样的问题，困扰了很久。。。）最后我想到了会不会是浏览器缓存问题。结果不出所料，搜了stackoverflow发现别人也遇到了一样的问题。。。很好，国内网站果然比较水，完全查不到相关的细节。看看下面<a href="http://stackoverflow.com/questions/21714653/flask-css-not-updating" target="_blank" rel="external">链接</a>：<br>]]>
     
     </summary>
     
